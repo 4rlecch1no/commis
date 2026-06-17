@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Komisi Ilustrasi & Portofolio </title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 50% 50%, #1f2833 0%, #0b0c10 100%);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero / Header */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #1f2833, #4f5d75);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(102, 252, 241, 0.15);
+            border: 1px solid #66fcf1;
+        }
+
+        header h1 {
+            font-size: 32px;
+            color: #66fcf1;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(102, 252, 241, 0.5);
+        }
+
+        header p {
+            color: #95a5a6;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #66fcf1;
+            color: #0b0c10;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 10px;
+            box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #66fcf1;
+            margin-bottom: 30px;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        /* Price List Grid */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .price-card {
+            background: #1f2833;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #4f5d75;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            border-color: #66fcf1;
+            box-shadow: 0 5px 15px rgba(102, 252, 241, 0.2);
+        }
+
+        .price-card .type {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .price-card .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #66fcf1;
+            margin-bottom: 15px;
+        }
+
+        .price-card .desc {
+            font-size: 14px;
+            color: #95a5a6;
+        }
+
+        /* Add-on Box */
+        .addon-box {
+            background-color: rgba(31, 40, 51, 0.6);
+            border-left: 5px solid #66fcf1;
+            padding: 25px;
+            border-radius: 0 15px 15px 0;
+            margin-top: 30px;
+            border-top: 1px solid rgba(102, 252, 241, 0.2);
+            border-right: 1px solid rgba(102, 252, 241, 0.2);
+            border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+        }
+
+        .addon-box h3 {
+            color: #66fcf1;
+            margin-bottom: 15px;
+        }
+
+        .addon-box ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 10px;
+        }
+
+        .addon-box li {
+            font-size: 15px;
+            color: #c5c6c7;
+        }
+
+        /* Portofolio / Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: #1f2833;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #4f5d75;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: #66fcf1;
+            box-shadow: 0 5px 15px rgba(102, 252, 241, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-info {
+            padding: 15px;
+            text-align: center;
+            font-size: 15px;
+            color: #ffffff;
+            font-weight: 600;
+            background: #1f2833;
+            border-top: 1px solid #4f5d75;
+        }
+
+        /* Do & Don't Split */
+        .rules-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .rule-card {
+            background: #1f2833;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 1px solid #4f5d75;
+        }
+
+        .rule-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .rule-card.do h3 { color: #2ecc71; text-shadow: 0 0 5px rgba(46, 204, 113, 0.3); }
+        .rule-card.dont h3 { color: #e74c3c; text-shadow: 0 0 5px rgba(231, 76, 60, 0.3); }
+
+        .rule-card ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .rule-card ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+            color: #c5c6c7;
+        }
+
+        .rule-card.do ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .rule-card.dont ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Terms Box */
+        .terms-box {
+            background: #1f2833;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px dashed #66fcf1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .terms-box ul {
+            list-style: none;
+        }
+
+        .terms-box ul li {
+            margin-bottom: 12px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            color: #c5c6c7;
+        }
+
+        .terms-box ul li::before {
+            content: "";
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        /* Contact Button */
+        .cta-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .btn-order {
+            display: inline-block;
+            background: linear-gradient(135deg, #66fcf1, #45a29e);
+            color: #0b0c10;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 252, 241, 0.3);
+        }
+
+        .btn-order:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 25px rgba(102, 252, 241, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #4f5d75;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1> PRICE LIST & PORTFOLIO </h1>
+            <p>Silakan pelajari detail harga, sampel karya, dan ketentuan di bawah ini sebelum memesan </p>
+            <div class="status-badge">STATUS: OPEN</div>
+        </header>
+
+        <!-- Price List -->
+        <section>
+            <h2 class="section-title">Pilihan Kategori Harga</h2>
+            <div class="price-grid">
+                <div class="price-card">
+                    <div class="type"> Headshot</div>
+                    <div class="price">Rp30.000</div>
+                    <div class="desc">1 karakter, background polos</div>
+                </div>
+                <div class="price-card">
+                    <div class="type"> Bust Up</div>
+                    <div class="price">Rp45.000</div>
+                    <div class="desc">Pengerjaan sampai dada</div>
+                </div>
+                <div class="price-card">
+                    <div class="type"> Half Body</div>
+                    <div class="price">Rp65.000</div>
+                    <div class="desc">Pengerjaan sampai pinggang</div>
+                </div>
+                <div class="price-card">
+                    <div class="type"> Knee Up</div>
+                    <div class="price">Rp80.000</div>
+                    <div class="desc">Pengerjaan sampai lutut</div>
+                </div>
+                <div class="price-card">
+                    <div class="type"> Full Body</div>
+                    <div class="price">Rp100.000</div>
+                    <div class="desc">Pengerjaan seluruh tubuh</div>
+                </div>
+                <div class="price-card">
+                    <div class="type"> Chibi</div>
+                    <div class="price">Rp25.000</div>
+                    <div class="desc">Gaya karakter mini/imut</div>
+                </div>
+            </div>
+
+            <!-- Add-on -->
+            <div class="addon-box">
+                <h3> Add-on (Biaya Tambahan)</h3>
+                <ul>
+                    <li><strong>Karakter tambahan:</strong> +80% dari harga awal</li>
+                    <li><strong>Background sederhana:</strong> +Rp10.000 – 20.000</li>
+                    <li><strong>Background detail:</strong> +Rp30.000+</li>
+                    <li><strong>Aksesoris/detail rumit:</strong> +Rp5.000 – 15.000</li>
+                    <li><strong>Revisi setelah sketch fix:</strong> +Rp5.000/revisi</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Portfolio / Gallery Section -->
+        <section>
+            <h2 class="section-title">Sampel Karya / Portofolio</h2>
+            <div class="gallery-grid">
+                
+                <!-- Kotak Karya 1 -->
+                <div class="gallery-item">
+                    <img src="IMG-20260530-WA0010.jpg" alt="Sampel Headshot">
+                    <div class="gallery-info">Sampel Karya 1</div>
+                </div>
+
+                <!-- Kotak Karya 2 -->
+                <div class="gallery-item">
+                    <img src="Tak berjudul40_20260404155333.png" alt="Sampel Half Body">
+                    <div class="gallery-info">Sampel Karya 2</div>
+                </div>
+
+                <!-- Kotak Karya 3 -->
+                <div class="gallery-item">
+                    <img src="Untitled14.png" alt="Sampel Chibi">
+                    <div class="gallery-info">Sampel Karya 3</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Do & Don'ts -->
+        <section class="rules-container">
+            <div class="rule-card do">
+                <h3>DO </h3>
+                <ul>
+                    <li>OC (Original Character)</li>
+                    <li>Fanart</li>
+                    <li>Couple / duo</li>
+                    <li>Profil picture</li>
+                    <li>Outfit request</li>
+                    <li>Ekspresi & pose request</li>
+                    <li>Karakter game / anime</li>
+                </ul>
+            </div>
+            <div class="rule-card dont">
+                <h3>DON’T </h3>
+                <ul>
+                    <li>NSFW</li>
+                    <li>Gore berlebihan</li>
+                    <li>Mecha kompleks</li>
+                    <li>Menyalin artwork orang lain 100%</li>
+                    <li>Deadline terlalu mendadak</li>
+                    <li>Konten ofensif</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Terms -->
+        <section>
+            <h2 class="section-title">Ketentuan Layanan (Terms)</h2>
+            <div class="terms-box">
+                <ul>
+                    <li>Pembayaran dilakukan di awal / DP 50%.</li>
+                    <li>Estimasi waktu pengerjaan sekitar 3–10 hari.</li>
+                    <li>Maksimal revisi pada tahap sketch adalah 2x.</li>
+                    <li>Hasil akhir karya akan dikirimkan dalam format PNG/JPG.</li>
+                    <li>Klien diperbolehkan mengunggah (upload) karya dengan tetap menyertakan credit kreator.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CTA Order -->
+        <section class="cta-section">
+            <a href="https://wa.me/6282118375148" class="btn-order" target="_blank">Hubungi untuk Memesan </a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Portofolio Komisi Ilustrasi Galaxy.</p>
+    </footer>
+
+</body>
+</html>
